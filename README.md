@@ -1,4 +1,4 @@
-## Oi 👋, sou [João Guilherme!](https://github.com/mateusaledev/)
+## Oi 👋, sou [João Guilherme!](https://github.com/Joao-Guilherme88/)
 
 [![Emblema do LinkedIn](https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/joão-guilherme-gomes-da-silva-235982238)
 [![Facebook](https://img.shields.io/badge/Facebook-blue?style=flat-square&logo=facebook&logoColor=white)](https://www.facebook.com/guilherme.gomesdasilva.33/)
