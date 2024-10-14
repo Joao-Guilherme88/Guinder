@@ -1,3 +1,7 @@
+from abc import ABC, abstractclassmethod, abstractproperty
+from datetime import datetime
+
+
 class Usuario:
     def __init__(self, nome, data_nascimento, cpf, endereco):
         self.nome = nome
@@ -5,19 +9,60 @@ class Usuario:
         self.cpf = cpf
         self.endereco = endereco
         self.contas = []  # Lista para armazenar as contas do usuário
+    
+    def realizar_transaçao(self, conta, transaçao):
+        transaçao.registrar(conta)
 
     def adicionar_conta(self, conta):
         self.contas.append(conta)
 
 
 class ContaCorrente:
-    def __init__(self, usuario):
+    def __init__(self, usuario, numero):
         self.usuario = usuario
+        self.agencia = "0001"
+        self.numero = numero
         self.saldo = 0
         self.limite = 500
         self.extrato_movimentacoes = ""
         self.numero_saques = 0
         self.LIMITE_SAQUES = 3
+
+    @classmethod
+    def nova_conta(cls, usuario,numero):
+        return cls(numero, usuario)
+    
+    @property
+    def saldo(self):
+        return self.saldo
+    
+    @property
+    def numero(self):
+        return self.numero
+    
+    @property
+    def usuario(self):
+        return self.usuario
+    
+    @property
+    def numero_saques(self):
+        return self.numero_saques
+    
+    @property
+    def limite(self):
+        return self.limite
+    
+    @property
+    def agencia(self):
+        return self.agencia
+    
+    @property
+    def LIMITE_SAQUES(self):
+        return self.LIMITE_SAQUES
+    
+    @property
+    def extrato_movimentacoes(self):
+        return self.extrato_movimentacoes
 
     def depositar(self, valor):
         if valor > 0:
@@ -26,6 +71,9 @@ class ContaCorrente:
             print(f"Depósito de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("Operação falhou! O valor informado é inválido.")
+            return False
+        
+        return True
 
     def sacar(self, valor):
         excedeu_saldo = valor > self.saldo
@@ -43,8 +91,12 @@ class ContaCorrente:
             self.extrato_movimentacoes += f"Saque: R$ {valor:.2f}\n"
             self.numero_saques += 1
             print(f"Saque de R$ {valor:.2f} realizado com sucesso.")
+            return True
+        
         else:
             print("Operação falhou! O valor informado é inválido.")
+
+        return False    
 
     def transferir(self, valor, conta_destino):
         if valor > 0 and valor <= self.saldo:
