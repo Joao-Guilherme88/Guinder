@@ -6,7 +6,7 @@
 
 ### Fico feliz em ver você aqui! &nbsp; ![](https://visitor-badge.glitch.me/badge?page_id=mateusalesilv.mateusalesilv&style=flat-square&color=0088cc)
 
-Estou graduado na Estácio de Sá e fazendo um bootcamp da NTT DATA em Engenharia de Dados com Python, sempre disposto a aprender novas tecnologias. Gosto muito de jogar uma peladinha de vez em quando.
+Estou graduado na Estácio de Sá, sempre disposto a aprender novas tecnologias. Gosto muito de jogar uma peladinha de vez em quando.
 
 Gostou do meu trabalho?
 
